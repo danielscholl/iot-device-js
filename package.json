@@ -1,0 +1,26 @@
+{
+  "name": "device",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "monitor": "az iot hub monitor-events --hub-name $IOTHUB --device-id $DEVICE",
+    "start": "node index.js",
+    "test": "tape test/*.spec.js",
+    "watch": "watch 'clear && npm run -s test' .",
+    "clean": "rm -rf node_modules"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "azure-iot-device": "^1.9.1",
+    "azure-iot-device-amqp": "^1.9.1",
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.1",
+    "tape": "^4.9.2",
+    "watch": "^1.0.2"
+  }
+}
