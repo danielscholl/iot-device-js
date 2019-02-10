@@ -1,0 +1,6 @@
+version: 1.0-preview-1
+steps:
+  - build: -t {{.Run.Registry}}/iot-device-js:{{.Run.ID}} -t {{.Run.Registry}}/iot-device-js:0.0.1 -f ./Dockerfile ./
+  - push:
+    - {{.Run.Registry}}/iot-device-js:{{.Run.ID}}
+    - {{.Run.Registry}}/iot-device-js:0.0.1
