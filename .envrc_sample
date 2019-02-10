@@ -1,10 +1,10 @@
 # IOT HUB INFORMATION
-export IOTHUB="<hub_name>"
-export IOTHUB_CONNECTION_STRING=<hub_connectionstring>"
+export HUB="<hub_name>"
+export HUB_CONNECTION_STRING=<hub_connectionstring>"
 
 # IOT DEVICE INFORMATION
 export DEVICE="<device_name>"
 export DEVICE_CONNECTION_STRING="<device_connectionstring>"
 
-# CONTAINER REGISTRY
+export GROUP="<resource_group>"
 export CONTAINER_REGISTRY_SERVER="<registry_name>"

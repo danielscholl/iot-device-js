@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "monitor": "az iot hub monitor-events --hub-name $IOTHUB --device-id $DEVICE",
+    "monitor": "az iot hub monitor-events --hub-name $HUB --device-id $DEVICE",
     "start": "node index.js",
     "docker:build": "docker-compose -p iot build",
+    "docker:push": "docker-compose push",
     "docker": "docker-compose -p iot up -d",
     "docker:stop": "docker-compose -p iot stop && docker-compose -p iot rm --force",
+    "deploy": "aci/deploy.sh && az container create --resource-group ${GROUP} --file aci/deploy.yaml -oyaml",
     "test": "tape test/*.spec.js",
     "watch": "watch 'clear && npm run -s test' .",
     "clean": "rm -rf node_modules"

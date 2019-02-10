@@ -12,7 +12,7 @@ For manual testing purposes if additional variables are set `npm run monitor` ca
 - DEVICE: Device Name
 
 
-### LocalHost 
+### LocalHost
 
 ```bash
 # Install
@@ -33,4 +33,3 @@ npm run monitor
 docker-compose build
 docker-compose up
 ```
-

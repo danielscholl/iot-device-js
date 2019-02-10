@@ -2,3 +2,4 @@
 node_modules/
 .envrc
 cert/*.pem
+aci/*.yaml
