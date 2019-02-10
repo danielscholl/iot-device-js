@@ -1,11 +1,12 @@
-version: '2'
+version: '3'
 services:
   device:
     build: .
-    image: localhost:5000/iot-device:latest
+    image: $CONTAINER_REGISTRY_SERVER/iot-device-js:latest
+    volumes:
+      - ./cert:/usr/src/app/cert
     environment:
       DEVICE: $DEVICE
       DEVICE_CONNECTION_STRING: $DEVICE_CONNECTION_STRING
       MESSAGE_INTERVAL: 2000
       LOG_LEVEL: debug
-
