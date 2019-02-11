@@ -6,6 +6,11 @@
   "scripts": {
     "monitor": "az iot hub monitor-events --hub-name $HUB --device-id $DEVICE",
     "start": "node index.js",
+    "device:x509": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_thumbprint --output-dir cert -oyaml",
+    "postdevice:x509": "npm run postdevice",
+    "device": "az iot hub device-identity create -d $DEVICE -n $HUB -oyaml",
+    "postdevice": "DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv)",
+    "device:rm": "az iot hub device-identity delete -d $DEVICE -n $HUB -oyaml && rm cert/*.pem",
     "docker:build": "docker-compose -p iot build",
     "docker:push": "docker-compose push",
     "docker": "docker-compose -p iot up -d",
