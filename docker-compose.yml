@@ -2,7 +2,7 @@ version: '3'
 services:
   device:
     build: .
-    image: $CONTAINER_REGISTRY_SERVER/iot-device-js:latest
+    image: $REGISTRY_SERVER/iot-device-js:latest
     volumes:
       - ./cert:/usr/src/app/cert
     environment:

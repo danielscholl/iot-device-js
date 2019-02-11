@@ -23,8 +23,8 @@ properties:
         - name: 'DEVICE'
           value: '$DEVICE'
         - name: 'DEVICE_CONNECTION_STRING'
-          secureValue: 'HostName=$HUB.azure-devices.net;DeviceId=$DEVICE;x509=true'
-      image: danielscholl/iot-device-js:latest
+          secureValue: '$DEVICE_CONNECTION_STRING'
+      image: $REGISTRY_SERVER/iot-device-js:latest
       ports: []
       resources:
         requests:
@@ -44,6 +44,29 @@ tags: {}
 type: Microsoft.ContainerInstance/containerGroups
 EOF
 else
-  echo "don't use cert"
+  cat > aci/deploy.yaml << EOF
+apiVersion: '2018-06-01'
+location: eastus
+name: $DEVICE
+properties:
+  containers:
+  - name: $DEVICE
+    properties:
+      environmentVariables:
+        - name: 'DEVICE'
+          value: '$DEVICE'
+        - name: 'DEVICE_CONNECTION_STRING'
+          secureValue: '$DEVICE_CONNECTION_STRING'
+      image: $REGISTRY_SERVER/iot-device-js:latest
+      ports: []
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 1.5
+  osType: Linux
+  restartPolicy: Always
+tags: {}
+type: Microsoft.ContainerInstance/containerGroups
+EOF
 fi
 
