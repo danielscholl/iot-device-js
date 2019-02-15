@@ -7,8 +7,8 @@ const config = {
   options: {}
 };
 
-const cert = process.env.CERT_PATH || './cert/Device-cert.pem';
-const key = process.env.KEY_PATH || './cert/Device-key.pem';
+const cert = process.env.CERT_PATH || './cert/device-cert.pem';
+const key = process.env.KEY_PATH || './cert/device-key.pem';
 
 if (fs.existsSync(cert)) {
   config.options.cert = fs.readFileSync(cert, 'utf-8').toString();

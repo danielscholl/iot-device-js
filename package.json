@@ -11,7 +11,8 @@
     "clean": "rm -f ./cert/*.pem && az iot hub device-identity delete -d $DEVICE -n $HUB -oyaml",
     "docker": "docker-compose -p iot up -d",
     "docker:stop": "docker-compose -p iot stop && docker-compose -p iot rm --force",
-    "aci": "aci/deploy.sh && az container create --resource-group ${GROUP} --file aci/deploy.yaml -oyaml",
+    "aci": "aci/deploy.sh && npm run aci:start",
+    "aci:start": "az container create --resource-group ${GROUP} --file aci/deploy.yaml -oyaml",
     "aci:stop": "rm -f aci/*.yaml && az container delete --resource-group ${GROUP} --name $DEVICE --yes -oyaml",
     "test": "tape test/*.spec.js",
     "watch": "watch 'clear && npm run -s test' ."
