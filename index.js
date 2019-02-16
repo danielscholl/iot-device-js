@@ -3,7 +3,7 @@ const Device = require('./lib/device');
 const Telemetry = require('./lib/models').Device;
 const config = {
   connectionString: process.env.DEVICE_CONNECTION_STRING,
-  interval: process.env.MESSAGE_INTERVAL || 1000,
+  interval: process.env.MESSAGE_INTERVAL * 1000 || 2000,
   options: {}
 };
 
