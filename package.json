@@ -22,8 +22,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "azure-iot-device": "^1.9.1",
-    "azure-iot-device-amqp": "^1.9.1",
+    "azure-iot-device": "^1.9.3",
+    "azure-iot-device-amqp": "^1.9.3",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1"
   },
