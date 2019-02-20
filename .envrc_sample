@@ -1,10 +1,13 @@
-# IOT HUB INFORMATION
-export HUB="<hub_name>"
-export HUB_CONNECTION_STRING=<hub_connectionstring>"
+# Azure ARM Prinipial
+export ARM_TENANT_ID="<tenant_id>"
+export ARM_SUBSCRIPTION_ID="<subscription_id>"
+export ARM_CLIENT_ID="<sp_id>"
+export ARM_CLIENT_SECRET="<sp_key>"
 
-# IOT DEVICE INFORMATION
-export DEVICE="<device_name>"
-export DEVICE_CONNECTION_STRING="<device_connectionstring>"
-
+### Device Creation Environment Settings
 export GROUP="<resource_group>"
-export CONTAINER_REGISTRY_SERVER="<registry_name>"
+export DEVICE="<device_name>"
+export HUB="<hub_name>"
+
+### Docker Registry Environment Settings
+export REGISTRY_SERVER="localhost:5000"

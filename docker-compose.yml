@@ -1,12 +1,16 @@
 version: '3'
 services:
   device:
-    build: .
-    image: $REGISTRY_SERVER/iot-device-js:latest
-    volumes:
-      - ./cert:/usr/src/app/cert
+    build:
+      context: .
+      dockerfile: Dockerfile-provision
+    image: $REGISTRY_SERVER/iot-device-js:provision
+    # volumes:
+    #   - ./cert:/usr/src/app/cert
     environment:
-      DEVICE: $DEVICE
-      DEVICE_CONNECTION_STRING: $DEVICE_CONNECTION_STRING
-      MESSAGE_INTERVAL: 2000
-      LOG_LEVEL: debug
+      TERM: xterm
+      ARM_SUBSCRIPTION_ID: $ARM_SUBSCRIPTION_ID
+      ARM_CLIENT_ID: $ARM_CLIENT_ID
+      ARM_CLIENT_SECRET: $ARM_CLIENT_SECRET
+      ARM_TENANT_ID: $ARM_TENANT_ID
+      HUB: $HUB

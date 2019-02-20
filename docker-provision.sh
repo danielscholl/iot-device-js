@@ -29,7 +29,10 @@ function provisionDevice()
 
   tput setaf 2; echo "Creating IoT Edge Device" ; tput sgr0
   tput setaf 3; echo "------------------------------------" ; tput sgr0
-  DEVICE=$(hostname) npm run device
+  mkdir cert
+  DEVICE=$(hostname) npm run device:x509
+  mv ./cert/*-cert.pem ./cert/device-cert.pem
+  mv ./cert/*-key.pem ./cert/device-key.pem
 
 
   DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string \
