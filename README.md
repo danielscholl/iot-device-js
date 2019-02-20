@@ -38,6 +38,25 @@ npm run monitor
 npm run clean
 ```
 
+### Localhost Docker Device Simulation
+
+```bash
+docker build -t iot-device-js
+docker run -it \
+  -e ARM_SUBSCRIPTION_ID=$ARM_SUBSCRIPTION_ID \
+  -e ARM_CLIENT_ID=$ARM_CLIENT_ID \
+  -e ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET \
+  -e ARM_TENANT_ID=$ARM_TENANT_ID \
+  -e HUB=$HUB \
+  iot-device-js
+
+
+
+ARM_SUBSCRIPTION_ID: $ARM_SUBSCRIPTION_ID
+      ARM_CLIENT_ID: $ARM_CLIENT_ID
+      ARM_CLIENT_SECRET: $ARM_CLIENT_SECRET
+      ARM_TENANT_ID: $ARM_TENANT_ID
+```
 
 ### Localhost Docker Device Simulation
 
