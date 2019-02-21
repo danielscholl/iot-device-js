@@ -1,5 +1,11 @@
 # iot-device-js
 
+The purpose of this solution is to be able to easily deploy and run IoT Edge Devices
+
+_PreRequisites__
+
+The use of [direnv](https://direnv.net/) can help managing environment variables.
+
 ## Environment Variables
 
 ### Device Creation
@@ -106,6 +112,10 @@ docker-compose -p iot up -d
 # Stop the IoT Device Container
 docker-compose -p iot stop
 docker-compose -p iot rm --force
+
+## To deploy to a swarm with Replicate Sets
+docker stack deploy --compose-file docker-compose.yml iot
+docker stack rm iot
 ```
 
 ## Azure ACI Device Simulation
