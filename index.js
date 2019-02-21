@@ -1,5 +1,4 @@
 const fs = require('fs');
-const Provision = require('./lib/provision');
 
 const Device = require('./lib/device');
 const Telemetry = require('./lib/models').Device;
@@ -27,27 +26,8 @@ if (fs.existsSync(key)) {
 }
 
 if (useSymmetricKey) {
-  config.options = process.env.SYMMETRIC_KEY;
+  config.options = process.env.SYMMETRIC_KEY || 'UNKNOWN';
 }
 
-// FIX THE CHRISTMAS TREE LATER GET IT TO WORK NOW
-if (!config.connectionString) {
-  const provision = new Provision(config);
-
-  provision.getConnectionString((result) => {
-    config.connectionString = result;
-
-    const device = new Device(config, Telemetry);
-    device.sendMessage(() => {
-      process.exit(0);
-    });
-  });
-
-} else {
-  const device = new Device(config, Telemetry);
-  device.sendMessage(() => {
-    process.exit(0);
-  });
-}
-
-
+let device = new Device(config, Telemetry);
+device.start();
