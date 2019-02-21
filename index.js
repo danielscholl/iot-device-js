@@ -14,16 +14,19 @@ let config = {
 
 const cert = process.env.CERT_PATH || './cert/device-cert.pem';
 const key = process.env.KEY_PATH || './cert/device-key.pem';
+let useSymmetricKey = true;
 
 if (fs.existsSync(cert)) {
   config.options.cert = fs.readFileSync(cert, 'utf-8').toString();
+  useSymmetricKey = false;
 }
 
 if (fs.existsSync(key)) {
   config.options.key = fs.readFileSync(key, 'utf-8').toString();
+  useSymmetricKey = false;
 }
 
-if (process.env.SYMMETRIC_KEY) {
+if (useSymmetricKey) {
   config.options = process.env.SYMMETRIC_KEY;
 }
 

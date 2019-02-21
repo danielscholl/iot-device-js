@@ -4,7 +4,11 @@
 
 Deploy with docker-compose
 ```bash
-docker-compose -p dps up
+# Deploy using Symmetric Key Attestation
+docker-compose -f docker-compose.key.yml -p dps up
+
+# Deploy using X509 Attestation  ** MAKE SURE CERTS EXIST **
+docker-compose -f docker-compose.509.yml -p dps up
 ```
 
 Deploy to ACI
