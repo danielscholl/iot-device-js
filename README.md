@@ -37,6 +37,14 @@ The use of [direnv](https://direnv.net/) can help managing environment variables
 - ARM_CLIENT_SECRET: Azure Prinicpal Application secret
 
 
+### DPS Provisioning
+
+- DPS_HOST: Azure Device Provisioning Service Host
+- ID_SCOPE: Azure Device Provisioning Service ID Scopt
+- REGISTRATION_ID: Azure Device Provisioning Service Registration Id
+- SYMMETRIC_KEY: Azure Device Provisioning Service Symmetric Key
+
+
 ## LocalHost Device Simulation
 
 ```bash

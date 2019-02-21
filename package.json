@@ -26,6 +26,10 @@
   "dependencies": {
     "azure-iot-device": "^1.9.3",
     "azure-iot-device-amqp": "^1.9.3",
+    "azure-iot-provisioning-device": "^1.5.3",
+    "azure-iot-provisioning-device-amqp": "^1.5.3",
+    "azure-iot-security-symmetric-key": "^1.5.3",
+    "azure-iot-security-x509": "^1.5.3",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1"
   },

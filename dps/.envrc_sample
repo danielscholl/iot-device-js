@@ -1,0 +1,6 @@
+export GROUP="<resource_group>"
+
+export DPS_HOST="<dps_host>"
+export ID_SCOPE="<id_scope>"
+export REGISTRATION_ID="<registration_id>"
+export SYMMETRIC_KEY="<symmetric_key>"

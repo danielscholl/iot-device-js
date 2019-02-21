@@ -1,0 +1,10 @@
+version: '3'
+services:
+  device:
+    image: danielscholl/iot-device-js:latest
+    environment:
+      DPS_HOST: $DPS_HOST
+      ID_SCOPE: $ID_SCOPE
+      REGISTRATION_ID: $REGISTRATION_ID
+      SYMMETRIC_KEY: $SYMMETRIC_KEY
+      LOG_LEVEL: debug
