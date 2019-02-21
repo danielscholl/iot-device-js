@@ -8,4 +8,3 @@ services:
       DPS_HOST: $DPS_HOST
       ID_SCOPE: $ID_SCOPE
       REGISTRATION_ID: $REGISTRATION_ID
-      LOG_LEVEL: debug
