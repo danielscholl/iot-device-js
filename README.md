@@ -2,7 +2,7 @@
 
 The purpose of this solution is to be able to easily deploy and run IoT Devices to test different features.
 
-There are several different use cases that this code sample supports testing.
+__Supported Use Cases__
 
 1. Localhost Device Symmetric Key
   _On a localhost register a device using Symmetric Key Authentication and send telemetry data_
@@ -31,7 +31,7 @@ There are several different use cases that this code sample supports testing.
 1. Receive and act on Direct Method
   _Receive a DirectMethod Message to change the interval time for sending telemetry ata_
 
-_PreRequisites__
+__PreRequisites__
 
 The use of [direnv](https://direnv.net/) can help managing environment variables.
 
