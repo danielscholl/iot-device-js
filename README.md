@@ -4,19 +4,17 @@ The purpose of this solution is to be able to easily deploy and run IoT Devices 
 
 __PreRequisites__
 
-Requires the use of [direnv](https://direnv.net/).
-
-Requires the use of [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
-
-Requires the use of [Docker](https://www.docker.com/get-started).
+Requires the use of [direnv](https://direnv.net/).  
+Requires the use of [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).  
+Requires the use of [Docker](https://www.docker.com/get-started).  
 
 
-__Related Repositories__
+### Related Repositories
 
-- [iot-resources](https://github.com/danielscholl/iot-resources)
-- [iot-device-edge](https://github.com/danielscholl/iot-device-edge)
-- [iot-device-js](https://github.com/danielscholl/iot-device-js)
-- [iot-control-js](https://github.com/danielscholl/iot-control-js)
+- [iot-resources](https://github.com/danielscholl/iot-resources)  - Deploying IoT Resources and x509 Management
+- [iot-device-edge](https://github.com/danielscholl/iot-device-edge) - Simple Edge Testing
+- [iot-device-js](https://github.com/danielscholl/iot-device-js) - Simple Device Testing
+- [iot-control-js](https://github.com/danielscholl/iot-control-js) - Simple Control Testing
 
 
 ### Supported Use Cases
