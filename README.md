@@ -2,41 +2,58 @@
 
 The purpose of this solution is to be able to easily deploy and run IoT Devices to test different features.
 
-__Supported Use Cases__
+__PreRequisites__
 
-1. Localhost Device Symmetric Key
+Requires the use of [direnv](https://direnv.net/).
+
+Requires the use of [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+Requires the use of [Docker](https://www.docker.com/get-started).
+
+
+__Related Repositories__
+
+- [iot-resources](https://github.com/danielscholl/iot-resources)
+- [iot-device-edge](https://github.com/danielscholl/iot-device-edge)
+- [iot-device-js](https://github.com/danielscholl/iot-device-js)
+- [iot-control-js](https://github.com/danielscholl/iot-control-js)
+
+
+### Supported Use Cases
+
+1. __Localhost Device Symmetric Key__
 
     _On a localhost register a device using Symmetric Key Authentication and send telemetry data_
 
-1. Docker Device Symmetric Key
+1. __Docker Device Symmetric Key__
 
     _Within a container register a device using Symmetric Key Authentication and send telemetry data_
 
-1. ACI Device Symmetric Key
+1. __ACI Device Symmetric Key__
 
     _Within ACI register a device using Symmetric Key Authentication and send telemetry data_
 
-1. Device Provisioning Service Symmetric Key Attestation
+1. __Device Provisioning Service Symmetric Key Attestation__
 
     _Either from localhost or Docker request from DPS hub connection information using Symmetric Key with Individual Enrollments and send telemetry data_
 
-1. Localhost Device x509
+1. __Localhost Device x509__
 
     _On a localhost register a device using x509 Certificate Authentication and send telemetry data_
 
-1. Docker Device x509
+1. __Docker Device x509__
 
     _Within a container register a device using x509 Certificate Authentication and send telemetry data_
 
-1. ACI Device x509
+1. __ACI Device x509__
 
     _Within ACI register a device using x509 Certificate Authentication and send telemetry data_
 
-1. Device Provisioning Service x509 Attestation
+1. __Device Provisioning Service x509 Attestation__
 
     _Either from localhost or Docker request from DPS hub connection information using x509 Certs for either Individual or Group Enrollments and send telemetry data_
 
-1. Receive and act on Direct Method
+1. __Receive and act on Direct Method__
 
     _Receive a DirectMethod Message to change the interval time for sending telemetry ata_
 
