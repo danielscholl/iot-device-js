@@ -5,31 +5,40 @@ The purpose of this solution is to be able to easily deploy and run IoT Devices 
 __Supported Use Cases__
 
 1. Localhost Device Symmetric Key
-  _On a localhost register a device using Symmetric Key Authentication and send telemetry data_
+
+    _On a localhost register a device using Symmetric Key Authentication and send telemetry data_
 
 1. Docker Device Symmetric Key
-  _Within a container register a device using Symmetric Key Authentication and send telemetry data_
+
+    _Within a container register a device using Symmetric Key Authentication and send telemetry data_
 
 1. ACI Device Symmetric Key
-  _Within ACI register a device using Symmetric Key Authentication and send telemetry data_
+
+    _Within ACI register a device using Symmetric Key Authentication and send telemetry data_
 
 1. Device Provisioning Service Symmetric Key Attestation
-  _Either from localhost or Docker request from DPS hub connection information using Symmetric Key with Individual Enrollments and send telemetry data_
+
+    _Either from localhost or Docker request from DPS hub connection information using Symmetric Key with Individual Enrollments and send telemetry data_
 
 1. Localhost Device x509
-  _On a localhost register a device using x509 Certificate Authentication and send telemetry data_
+
+    _On a localhost register a device using x509 Certificate Authentication and send telemetry data_
 
 1. Docker Device x509
-  _Within a container register a device using x509 Certificate Authentication and send telemetry data_
+
+    _Within a container register a device using x509 Certificate Authentication and send telemetry data_
 
 1. ACI Device x509
-  _Within ACI register a device using x509 Certificate Authentication and send telemetry data_
+
+    _Within ACI register a device using x509 Certificate Authentication and send telemetry data_
 
 1. Device Provisioning Service x509 Attestation
-  _Either from localhost or Docker request from DPS hub connection information using x509 Certs for either Individual or Group Enrollments and send telemetry data_
+
+    _Either from localhost or Docker request from DPS hub connection information using x509 Certs for either Individual or Group Enrollments and send telemetry data_
 
 1. Receive and act on Direct Method
-  _Receive a DirectMethod Message to change the interval time for sending telemetry ata_
+
+    _Receive a DirectMethod Message to change the interval time for sending telemetry ata_
 
 __PreRequisites__
 
