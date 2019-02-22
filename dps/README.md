@@ -1,6 +1,10 @@
 # Device Provisioning Instructions
 
-> Set the Environment variables in the .envrc file
+1. Create the DPS Enrollments as necessary
+
+1. If appropriate copy the x509 certs to the cert directory with the proper naming convention
+
+1. Set the Environment variables in the .envrc file as appropriate
 
 Deploy with docker-compose
 ```bash
