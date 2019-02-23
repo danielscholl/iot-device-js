@@ -67,9 +67,10 @@ The use of [direnv](https://direnv.net/) can help managing environment variables
 - DEVICE: A unique name to use as the IoT Device
 
 
-### Device Code
+### Device
 
 - DEVICE_CONNECTION_STRING: Connection string of the IoT Device
+- EDGE_GATEWAY: IP Address of IoT Edge Device (Optional)
 
 
 ### Monitor Scripts
@@ -129,6 +130,7 @@ export SYMMETRIC_KEY=$(az iot dps enrollment create \
 # Create either Individual Enrollment or Group Enrollment using CA
 
 # Run the Device
+DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv)
 npm start
 
 # Monitor the Device in a seperate terminal session

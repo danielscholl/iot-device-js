@@ -6,6 +6,7 @@
   "scripts": {
     "device": "az iot hub device-identity create -d $DEVICE -n $HUB -oyaml",
     "device:x509": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_thumbprint --output-dir cert -oyaml",
+    "device:ca": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_ca",
     "start": "DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) node index.js",
     "monitor": "az iot hub monitor-events --hub-name $HUB --device-id $DEVICE",
     "clean": "rm -f ./cert/*.pem && az iot hub device-identity delete -d $DEVICE -n $HUB -oyaml",

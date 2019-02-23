@@ -29,5 +29,9 @@ if (useSymmetricKey) {
   config.options = process.env.SYMMETRIC_KEY || 'UNKNOWN';
 }
 
+if (config.connectionString && process.env.EDGE_GATEWAY) {
+  config.connectionString = config.connectionString + ';GatewayHostName=' + process.env.EDGE_GATEWAY;
+}
+
 let device = new Device(config, Telemetry);
 device.start();
