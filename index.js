@@ -7,7 +7,7 @@ let config = {
   interval: process.env.MESSAGE_INTERVAL || 1000,
   provisionHost: process.env.DPS_HOST,
   idScope: process.env.ID_SCOPE,
-  registrationId: process.env.REGISTRATION_ID,
+  registrationId: process.env.DEVICE,
   options: {}
 };
 
