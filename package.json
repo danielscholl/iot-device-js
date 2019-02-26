@@ -11,7 +11,7 @@
     "monitor": "az iot hub monitor-events --hub-name $HUB --device-id $DEVICE",
     "clean": "rm -f ./cert/*.pem && az iot hub device-identity delete -d $DEVICE -n $HUB -oyaml",
     "docker:build": "docker build -t $REGISTRY_SERVER/iot-device-js:latest .",
-    "docker:start": "docker run -it --name $DEVICE --mount source=$(pwd)/cert,target=/usr/src/app/cert,type=bind -e DEVICE=$DEVICE -e PROTOCOL=AMQP -e LOG_LEVEL=debug -e EDGE_GATEWAY=$EDGE_GATEWAY -e DPS_HOST=$DPS_HOST -e ID_SCOPE=$ID_SCOPE -e DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) $REGISTRY_SERVER/iot-device-js:latest",
+    "docker:start": "docker run -it --name $DEVICE --mount source=$(pwd)/cert,target=/usr/src/app/cert,type=bind -e DEVICE=$DEVICE -e PROTOCOL=MQTT -e EDGE_GATEWAY=$EDGE_GATEWAY -e DPS_HOST=$DPS_HOST -e ID_SCOPE=$ID_SCOPE -e DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) $REGISTRY_SERVER/iot-device-js:latest",
     "docker:stop": "docker rm -f $DEVICE",
     "docker": "npm run docker:build && npm run docker:start",
     "aci": "aci/deploy.sh && npm run aci:start",
