@@ -15,5 +15,3 @@ services:
       ARM_TENANT_ID: $ARM_TENANT_ID
       HUB: $HUB
       EDGE_GATEWAY: $EDGE_GATEWAY
-      DPS_HOST: $DPS_HOST
-      ID_SCOPE: $ID_SCOPE

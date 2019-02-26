@@ -4,3 +4,4 @@ If x509 certificates are placed in this directory then the device will use x509 
 
 - Certificate File Name:  device-cert.pem
 - Private Key File Name:  device-key.pem
+- Root CA File Name:      root-ca.pem
