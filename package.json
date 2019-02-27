@@ -4,7 +4,7 @@
   "description": "A Simple IoT Device",
   "main": "index.js",
   "scripts": {
-    "certs": "./certs/device-cert.sh",
+    "certs": "./cert/device-cert.sh",
     "device": "az iot hub device-identity create -d $DEVICE -n $HUB -oyaml",
     "device:x509": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_thumbprint --output-dir cert -oyaml",
     "device:ca": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_ca -oyaml",
