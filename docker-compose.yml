@@ -5,8 +5,10 @@ services:
       context: .
       dockerfile: Dockerfile-provision
     image: $REGISTRY_SERVER/iot-device-js:provision
+    volumes:
+      - ./cert:/usr/src/app/cert
     deploy:
-      replicas: 3
+      replicas: 5
     environment:
       TERM: xterm
       ARM_SUBSCRIPTION_ID: $ARM_SUBSCRIPTION_ID

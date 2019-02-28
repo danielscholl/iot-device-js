@@ -247,3 +247,27 @@ docker-compose -p iot rm --force
 docker stack deploy --compose-file docker-compose.yml iot
 docker stack rm iot
 ```
+
+## Docker Swarm Service
+
+```bash
+export ARM_TENANT_ID="<tenant_id>"
+export ARM_SUBSCRIPTION_ID="<subscription_id>"
+export ARM_CLIENT_ID="<sp_id>"
+export ARM_CLIENT_SECRET="<sp_key>"
+export HUB=$(az iot hub list --resource-group $GROUP --query [].name -otsv)
+export EDGE_GATEWAY="<edge_gateway>"
+
+docker service create \
+  --replicas 20 \
+  --name iot \
+  --constraint node.role!=manager \
+  --mount type=volume,volume-driver=cloudstor:azure,source=cert,destination=/usr/src/app/cert \
+  --env ARM_TENANT_ID=$ARM_TENANT_ID \
+  --env ARM_SUBSCRIPTION_ID=$ARM_SUBSCRIPTION_ID \
+  --env ARM_CLIENT_ID=$ARM_CLIENT_ID \
+  --env ARM_CLIENT_SECRET=$ARM_CLIENT_SECRET \
+  --env HUB=$HUB \
+  --env EDGE_GATEWAY=$EDGE_GATEWAY \
+  danielscholl/iot-device-js:provision
+```
