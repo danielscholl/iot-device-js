@@ -22,7 +22,7 @@ steps:
 - script: docker build -f Dockerfile-provision -t $(provisionImage) .
   displayName: 'Docker Build Provision'
 - script: |
-    docker login -u $(clientId) -p $(clientSecret) $(containerRegistry)
+    docker login -u $(clientId) -p $(clientSecret)
     docker tag $(imageName) $(containerRegistry)/iot-device-js:latest
     docker tag $(provisionImage) $(containerRegistry)/iot-device-js:provision
     docker push $(containerRegistry)/iot-device-js:latest
