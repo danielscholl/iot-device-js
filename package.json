@@ -1,6 +1,6 @@
 {
   "name": "iot-device-js",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A Simple IoT Device",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,12 @@
     "device": "az iot hub device-identity create -d $DEVICE -n $HUB -oyaml",
     "device:x509": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_thumbprint --output-dir cert -oyaml",
     "device:ca": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_ca -oyaml",
+    "device:dps": "DEVICE=$DEVICE ./cert/device-cert.sh && mv ./cert/device.cert.pem ./cert/device-cert.pem && mv ./cert/device.key.pem ./cert/device-key.pem && rm ./cert/root-ca.pem ",
     "start": "DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) node index.js",
     "monitor": "az iot hub monitor-events --hub-name $HUB --device-id $DEVICE",
     "clean": "rm -f ./cert/*.pem && az iot hub device-identity delete -d $DEVICE -n $HUB -oyaml",
     "docker:build": "docker build -t $REGISTRY_SERVER/iot-device-js:latest .",
-    "docker:start": "docker run -it --name $DEVICE --mount source=$(pwd)/cert,target=/usr/src/app/cert,type=bind -e DEVICE=$DEVICE -e PROTOCOL=$PROTOCOL -e EDGE_GATEWAY=$EDGE_GATEWAY -e DPS_HOST=$DPS_HOST -e ID_SCOPE=$ID_SCOPE -e DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) $REGISTRY_SERVER/iot-device-js:latest",
+    "docker:start": "docker run -it --name $DEVICE --mount source=$(pwd)/cert,target=/usr/src/app/cert,type=bind -e DEVICE=$DEVICE -e PROTOCOL=$PROTOCOL -e EDGE_GATEWAY=$EDGE_GATEWAY -e APPINSIGHTS_INSTRUMENTATIONKEY=$APPINSIGHTS_INSTRUMENTATIONKEY -e DPS_HOST=$DPS_HOST -e ID_SCOPE=$ID_SCOPE -e MESSAGE_INTERVAL=2000 -e DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) $REGISTRY_SERVER/iot-device-js:latest",
     "docker:stop": "docker rm -f $DEVICE",
     "docker": "npm run docker:build && npm run docker:start",
     "aci": "aci/deploy.sh && npm run aci:start",

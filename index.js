@@ -19,7 +19,7 @@ let config = {
   protocol: process.env.PROTOCOL || 'AMQP'
 };
 
-if (config.edgeHost === null) {
+if (config.edgeHost === null || (config.provisionHost !== null && config.idScope !== null)) {
   if (fs.existsSync(cert)) config.options.cert = fs.readFileSync(cert, 'utf-8').toString();
   if (fs.existsSync(key)) config.options.key = fs.readFileSync(key, 'utf-8').toString();
 }
@@ -27,7 +27,6 @@ if (config.edgeHost === null) {
 if (config.edgeHost !== null) {
   if (fs.existsSync(ca)) config.options.ca = fs.readFileSync(ca, 'utf-8').toString();
 }
-
-
+console.log(config);
 let device = new Device(config, Telemetry);
 device.start();
