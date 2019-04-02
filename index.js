@@ -27,6 +27,6 @@ if (config.edgeHost === null || (config.provisionHost !== null && config.idScope
 if (config.edgeHost !== null) {
   if (fs.existsSync(ca)) config.options.ca = fs.readFileSync(ca, 'utf-8').toString();
 }
-console.log(config);
+
 let device = new Device(config, Telemetry);
 device.start();
