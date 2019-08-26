@@ -8,7 +8,7 @@
     "device": "az iot hub device-identity create -d $DEVICE -n $HUB -oyaml",
     "device:leaf": "./cert/device-cert.sh && npm run device",
     "device:x509": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_thumbprint --output-dir cert -oyaml",
-    "device:ca": "az iot hub device-identity create -d $DEVICE -n $HUB --am x509_ca -oyaml",
+    "device:ca": "npm run device:dps && az iot hub device-identity create -d $DEVICE -n $HUB --am x509_ca -oyaml",
     "device:dps": "DEVICE=$DEVICE ./cert/device-cert.sh && mv ./cert/device.cert.pem ./cert/device-cert.pem && mv ./cert/device.key.pem ./cert/device-key.pem && rm ./cert/root-ca.pem ",
     "start": "DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv) node index.js",
     "monitor": "az iot hub monitor-events --hub-name $HUB --device-id $DEVICE",
@@ -28,21 +28,21 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "applicationinsights": "^1.2.0",
-    "azure-iot-device": "^1.9.3",
-    "azure-iot-device-amqp": "^1.9.3",
-    "azure-iot-device-http": "^1.9.3",
-    "azure-iot-device-mqtt": "^1.9.3",
-    "azure-iot-provisioning-device": "^1.5.3",
-    "azure-iot-provisioning-device-amqp": "^1.5.3",
-    "azure-iot-security-symmetric-key": "^1.5.3",
-    "azure-iot-security-x509": "^1.5.3",
+    "applicationinsights": "^1.4.1",
+    "azure-iot-device": "^1.11.0",
+    "azure-iot-device-amqp": "^1.10.1",
+    "azure-iot-device-http": "^1.10.1",
+    "azure-iot-device-mqtt": "^1.10.1",
+    "azure-iot-provisioning-device": "^1.6.1",
+    "azure-iot-provisioning-device-amqp": "^1.6.1",
+    "azure-iot-security-symmetric-key": "^1.5.10",
+    "azure-iot-security-x509": "^1.5.10",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "tape": "^4.9.2",
+    "eslint": "^6.2.1",
+    "tape": "^4.11.0",
     "watch": "^1.0.2"
   }
 }

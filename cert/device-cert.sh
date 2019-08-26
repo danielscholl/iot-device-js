@@ -39,7 +39,7 @@ tput setaf 2; echo "Retrieving Required Certificates" ; tput sgr0
 tput setaf 3; echo "------------------------------------" ; tput sgr0
 
 # Download Root CA Certificate
-az keyvault certificate download --name ${ORGANIZATION}-root-ca --vault-name $VAULT --file cert/root-ca.pem --encoding PEM
+az keyvault certificate download --name ${ORGANIZATION}-intermediate-ca --vault-name $VAULT --file cert/root-ca.pem --encoding PEM
 
 # Download and extract PEM files for Device
 az keyvault secret download --name $DEVICE --vault-name $VAULT --file cert/$DEVICE.pem --encoding base64

@@ -24,6 +24,12 @@ properties:
           value: '$DEVICE'
         - name: 'DEVICE_CONNECTION_STRING'
           secureValue: '$DEVICE_CONNECTION_STRING'
+        - name: 'DPS_HOST'
+          value: 'global.azure-devices-provisioning.net'
+        - name: 'REGISTRATION_ID'
+          value: '$DEVICE'
+        - name: 'ID_SCOPE'
+          value: '$ID_SCOPE'
       image: $REGISTRY_SERVER/iot-device-js:latest
       ports: []
       resources:
