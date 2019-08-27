@@ -11,6 +11,7 @@ tput setaf 3; echo "-----------------------" ; tput sgr0
 
 if [ -f ./cert/device-cert.pem ] && [ -f ./cert/device-key.pem ]
 then
+echo "DPS Deployment"
   cat > aci/deploy.yaml << EOF
 apiVersion: '2018-06-01'
 location: eastus

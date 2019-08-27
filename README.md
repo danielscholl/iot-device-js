@@ -210,9 +210,7 @@ export REGISTRY_SERVER="localhost:5000"
 # Create a Device with "either" x509 or Symetric Key
 npm run device            # Create Device with Symetric Key
 npm run device:x509       # Create Device With x509
-
-# Retrieve the Connection String
-export DEVICE_CONNECTION_STRING=$(az iot hub device-identity show-connection-string --hub-name $HUB --device-id $DEVICE -otsv)
+npm run device:dps       # Create Device With x509
 
 # Build and start the Azure ACI Container
 npm run aci
